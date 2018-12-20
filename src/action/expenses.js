@@ -1,5 +1,6 @@
 import uuid from "uuid";
 import database from "../firebase/firebase";
+
 // ADD_EXPENSE
 export const addExpense = expense => ({
   type: "ADD_EXPENSE",
@@ -16,9 +17,9 @@ export const startAddExpense = (expenseData = {}) => {
       createdAt = 0
     } = expenseData;
     const expense = { description, note, amount, createdAt };
-    const path = `user/${uid}/expenses`;
-    database
-      .ref(path)
+
+    return database
+      .ref(`users/${uid}/expenses`)
       .push(expense)
       .then(ref => {
         dispatch(
@@ -32,51 +33,48 @@ export const startAddExpense = (expenseData = {}) => {
 };
 
 // REMOVE_EXPENSE
-export const removeExpenses = ({ id } = {}) => ({
+export const removeExpense = ({ id } = {}) => ({
   type: "REMOVE_EXPENSE",
   id
 });
 
-// Start to remove_expenses
-export const startRemoveExpenses = ({ id } = {}) => {
+export const startRemoveExpense = ({ id } = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
     return database
-      .ref(`user/${uid}/expenses/${id}`)
+      .ref(`users/${uid}/expenses/${id}`)
       .remove()
       .then(() => {
-        dispatch(removeExpenses({ id }));
+        dispatch(removeExpense({ id }));
       });
   };
 };
 
 // EDIT_EXPENSE
-export const editExpense = (id, update) => ({
+export const editExpense = (id, updates) => ({
   type: "EDIT_EXPENSE",
   id,
-  update
+  updates
 });
 
-// START EDIT_EXPENSE
-export const startEditExpense = (id, update) => {
+export const startEditExpense = (id, updates) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
     return database
-      .ref(`user/${uid}/expenses/${id}`)
-      .update(update)
+      .ref(`users/${uid}/expenses/${id}`)
+      .update(updates)
       .then(() => {
-        dispatch(editExpense(id, update));
+        dispatch(editExpense(id, updates));
       });
   };
 };
 
-// SET_EXPENSE
+// SET_EXPENSES
 export const setExpenses = expenses => ({
-  type: "SET_EXPENSE",
+  type: "SET_EXPENSES",
   expenses
 });
 
-// Start SET_EXPENSE
 export const startSetExpenses = () => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
