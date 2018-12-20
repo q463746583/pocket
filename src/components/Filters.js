@@ -50,6 +50,8 @@ export class ExpenseListFilters extends React.Component {
           onFocusChange={this.onFocusChange}
           showClearDates={true}
           isOutsideRange={() => false}
+          startDateId="randomuniquestringhere"
+          endDateId="anotherrandomuniquestring"
         />
       </div>
     );
