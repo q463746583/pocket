@@ -4,6 +4,7 @@ export default (
   expenses,
   { note, description, text, sortBy, startDate, endDate }
 ) => {
+  console.log(expenses);
   return expenses
     .filter(expense => {
       const createAtMoment = moment(expense.createdAt);

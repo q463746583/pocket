@@ -13,6 +13,7 @@ import getVisibleExpenses from "./selectors/expenses";
 import { firebase } from "./firebase/firebase";
 import "./playground/promises";
 
+ReactDOM.render(<p>This is a paragraph...</p>, document.getElementById("app"));
 const store = configureStore();
 // store.dispatch(sortByDate());
 
@@ -21,7 +22,7 @@ const template = (
     <AppRouter />
   </Provider>
 );
-
+const rootElement = document.getElementById("app");
 let hasRendered = false;
 const renderApp = () => {
   if (!hasRendered) {
@@ -29,23 +30,18 @@ const renderApp = () => {
     hasRendered = true;
   }
 };
-const rootElement = document.getElementById("app");
+
 ReactDOM.render(<p>Loading...</p>, rootElement);
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     store.dispatch(login(user.uid));
-    store
-      .dispatch(startSetExpenses())
-      .then(() => {
-        renderApp();
-        if (history.location.pathname === "/") {
-          history.push("/dashboard");
-        }
-      })
-      .catch(e => {
-        console.log("The error is", e);
-      });
+    store.dispatch(startSetExpenses()).then(() => {
+      renderApp();
+      if (history.location.pathname === "/") {
+        history.push("/home");
+      }
+    });
   } else {
     store.dispatch(logout());
     renderApp();
