@@ -5,8 +5,18 @@
   font-weight: 400;
   font-size: 2rem;
   padding: $s-size;
+  border-radius: 15px;
 }
 
 .button span {
   font-size: 1.2rem;
+}
+
+.button__logOut {
+  background: linear-gradient(#9198e6, #e66465);
+  border: none;
+  color: pueple;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 15px;
 }
