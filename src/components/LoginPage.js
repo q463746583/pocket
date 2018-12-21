@@ -7,7 +7,9 @@ const LoginPage = ({ startLogin }) => (
     <div className="box-layout_box">
       <h1 className="box-layout_title"> Cexpenses</h1>
       <p> Record your expenses</p>
-      <button onClick={startLogin}> Login </button>
+      <button className="button" onClick={startLogin}>
+        Login <span>via Google account</span>
+      </button>
     </div>
   </div>
 );
