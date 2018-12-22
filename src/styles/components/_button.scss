@@ -13,10 +13,24 @@
 }
 
 .button__logOut {
-  background: linear-gradient(#9198e6, #e66465);
-  border: none;
+  // background: linear-gradient(#9198e6, #e66465);
   color: pueple;
   padding: 10px;
   font-size: 1.5rem;
   border-radius: 15px;
+}
+
+.button__logOut:hover {
+  background: fade-out(rgb(228, 225, 36), 0.35);
+}
+
+.button__add {
+  background: $redToPurple;
+  border: none;
+  color: pueple;
+  padding: 10px;
+  font-size: 1.3rem;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 20%;
 }
