@@ -1,5 +1,5 @@
 .summary-header {
-  background: linear-gradient(#66ff99, #cc66ff);
+  background: #f7f7f7; //linear-gradient(#66ff99, #cc66ff);
   margin-button: $s-size;
   display: flex;
   justify-content: space-between;
@@ -7,7 +7,6 @@
 
 .summary-header__title {
   font-weight: 300;
-  font-size: 150%;
   margin-top: 40px;
   span {
     font-weight: bold;

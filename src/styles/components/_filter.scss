@@ -1,0 +1,15 @@
+.filter {
+  margin-top: 10px;
+  display: flex;
+  margin-bottom: $s-size;
+  flex-direction: column;
+  @media (min-width: $desktop-breakpoint) {
+    flex-direction: row;
+    margin-bottom: 30px;
+  }
+}
+
+.filter__item {
+  margin-right: $s-size;
+  margin-bottom: 10px;
+}

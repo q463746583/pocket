@@ -26,11 +26,15 @@
 
 .button__add {
   background: $redToPurple;
-  border: none;
-  color: pueple;
+  color: purple;
   padding: 10px;
   font-size: 1.3rem;
   display: inline-block;
   text-decoration: none;
-  border-radius: 20%;
+  border-radius: 10%;
+  border: 1px dotted purple;
+}
+
+.button__add:hover {
+  background: fade-out(rgb(228, 225, 36), 0.35);
 }

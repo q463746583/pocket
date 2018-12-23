@@ -3,3 +3,8 @@
   padding: 0 5rem;
   max-width: 80rem;
 }
+
+.content-container__filter {
+  @extend .content-container;
+  border: 1px outset purple;
+}
