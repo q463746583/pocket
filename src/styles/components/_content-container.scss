@@ -6,5 +6,11 @@
 
 .content-container__filter {
   @extend .content-container;
+  background: #edf5fc;
   border: 1px inset purple;
+}
+
+.content-container__form {
+  @extend .content-container;
+  margin: 4rem 0;
 }

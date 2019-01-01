@@ -38,3 +38,15 @@
 .button__add:hover {
   background: linear-gradient(#42f492, #f4d941);
 }
+
+.button__form {
+  @extend .button;
+  color: #7746c9;
+  //font-size: 30px;
+  font-weight: bold;
+}
+
+.button__remove {
+  @extend .button;
+  background: grey;
+}
