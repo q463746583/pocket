@@ -5,9 +5,9 @@
 }
 
 .content-container__filter {
-  @extend .content-container;
-  background: #edf5fc;
-  border: 1px inset purple;
+  background: #e0f0fd;
+  //border: 1px inset purple;
+  padding: 1px 5rem;
 }
 
 .content-container__form {

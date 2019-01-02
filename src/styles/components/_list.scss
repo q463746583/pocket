@@ -1,0 +1,68 @@
+.list-body {
+  margin-bottom: 5rem;
+  @media (min-width: $desktop-breakpoint) {
+    margin-bottom: 8rem;
+  }
+}
+
+.list-header {
+  margin: 2rem 0 0 0;
+  background: #e0f0fd;
+  color: #305b9b;
+  border: 1px solid darken(#e0f0fd, 7%);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 20px 20px 0 0;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  color: #343dba;
+  border: 1px solid darken(#e0f0fd, 7%);
+  border-top: none;
+  text-decoration: none;
+  padding: 0 2rem;
+  transition: padding 0.4s ease;
+  &:hover {
+    padding: 2rem;
+    background: url(/img/money.jfif);
+    color: #30060f;
+    font-weight: bold;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.list-item__description {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.list-item__time {
+  color: #305b9b;
+  font-size: 1.4rem;
+}
+
+.list-item__amount {
+  margin: 1.2rem 0 0 0;
+  text-align: right;
+  @media (min-width: $desktop-breakpoint) {
+    margin: 0;
+    padding-left: 2rem;
+  }
+}
+
+.list-item__message {
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: none;
+  }
+}

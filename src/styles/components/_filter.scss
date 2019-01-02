@@ -1,4 +1,5 @@
 .filter {
+  justify-content: center;
   margin-top: 10px;
   display: flex;
   margin-bottom: $s-size;
@@ -12,4 +13,11 @@
 .filter__item {
   margin-right: $s-size;
   margin-bottom: 10px;
+}
+
+.filter__search {
+  transition: padding 0.5s ease;
+  &:hover {
+    padding: 2rem 4rem 2rem 1rem;
+  }
 }
