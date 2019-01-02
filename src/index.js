@@ -11,6 +11,7 @@ import { startSetExpenses } from "./action/expenses";
 import getVisibleExpenses from "./selectors/expenses";
 import { firebase } from "./firebase/firebase";
 import "./playground/promises";
+import LoadingPage from "./components/LoadingPage";
 
 ReactDOM.render(<p>This is a paragraph...</p>, document.getElementById("app"));
 const store = configureStore();
@@ -30,7 +31,7 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p>Loading...</p>, rootElement);
+ReactDOM.render(<LoadingPage />, rootElement);
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
