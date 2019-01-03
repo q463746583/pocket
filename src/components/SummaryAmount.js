@@ -8,6 +8,7 @@ import TotalAmount from "../selectors/TotalAmount";
 
 export const Summary = ({ expensesLength, totalAmount }) => {
   const formatTotalAmount = numeral(totalAmount / 100).format("$0,0.00");
+
   return (
     <div className="summary-header">
       <h3> Summary: </h3>
@@ -29,9 +30,10 @@ export const Summary = ({ expensesLength, totalAmount }) => {
 };
 
 const mapStateToProps = state => {
+  console.log(state.expenses);
   return {
     expensesLength: selectExpenses(state.expenses, state.filters).length,
-    totalAmount: TotalAmount(state.expenses)
+    totalAmount: TotalAmount(selectExpenses(state.expenses, state.filters))
   };
 };
 
